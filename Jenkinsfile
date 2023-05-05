@@ -8,9 +8,9 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                echo 'run command -- cd $DIRECTORY_PATH'
-                echo 'run command -- git pull'
-                echo 'Build with Maven tool, run command -- mvn clean ' // build the code 
+                echo "run command -- cd $DIRECTORY_PATH"
+                echo "run command -- git pull"
+                echo "Build with Maven tool, run command -- mvn clean" // build the code 
             }
         }        
         stage('Unit and Integration Tests') { 
@@ -45,21 +45,21 @@ pipeline {
         }        
         stage('Deploy to Staging') {
             steps {
-                echo 'Deploy to Staging server, run command -- ssh $STAGING_SERVER'
+                echo "Deploy to Staging server, run command -- ssh $STAGING_SERVER"
                 echo 'run command cd /path/to/deployment && ./deploy.sh' // deploy to staging server using SSH
             }
         }
         
         stage('Integration Tests on Staging') {
             steps {
-                echo 'Integration Tests on Staging, run command -- ssh $STAGING_SERVER'
+                echo "Integration Tests on Staging, run command -- ssh $STAGING_SERVER"
                 echo 'run command -- cd /path/to/deployment && ./run_integration_tests.sh' // run integration tests on staging server using SSH
             }
         }
         
         stage('Deploy to Production') {
             steps {
-                echo 'Deploy to Production server, run command -- ssh $PRODUCTION_SERVER'
+                echo "Deploy to Production server, run command -- ssh $PRODUCTION_SERVER"
                 echo 'run command cd /path/to/deployment && ./deploy.sh' // deploy to Production server using SSH
             }
         }

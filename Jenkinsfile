@@ -20,7 +20,7 @@ pipeline {
             }
             post{
                 success {
-                    mail to: 'rayedalsrdi@gmail.com',
+                    mail to: 'mdsit223@gmail.com',
                     subject: 'Test Status Email',
                     body: 'Unit and Integration Tests were successful'
                 }
@@ -37,7 +37,7 @@ pipeline {
             }
             post{
                 success {
-                    mail to: 'rayedalsrdi@gmail.com',
+                    mail to: 'mdsit223@gmail.com',
                     subject: 'Security Scan Status Email',
                     body: 'Security Scan with SonarQube was successful'
                 }
